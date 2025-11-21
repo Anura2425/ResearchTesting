@@ -10,15 +10,15 @@ print("Initial Matrix (A):")
 print(matrix)
 
 
-'''
-Title:          inverse()
-Params:         matrix - 2D array
-Output:         inverse - 2D array
-Description:    Finds the inverse of an input array
-Requirements:   Must be a square matrix, determinant cant = 0
 
-'''
 def inverse(matrix):
+    '''
+    Title:          inverse()
+    Params:         matrix - 2D array
+    Output:         inverse - 2D array
+    Description:    Finds the inverse of an input array
+    Requirements:   Must be a square matrix, determinant cant = 0
+    '''
     det = determinant(matrix)
     if det == 0:
         print("Determinant is 0, no valid inverse")
@@ -28,11 +28,12 @@ def inverse(matrix):
     inv = adj/det
     return inv
 
-'''
-Title:          determinant()
-Description:    Recursively computes determinant using Laplace expansion
-'''
+
 def determinant(matrix):
+    '''
+    Title:          determinant()
+    Description:    Recursively computes determinant using Laplace expansion
+    '''
     n = len(matrix)
     if n == 1:
         return matrix[0][0]
@@ -49,11 +50,12 @@ def determinant(matrix):
         
     return det
 
-'''
-Title:          adjugate()
-Description:    Computes adj(A) = transpose of cofactor matrix
-'''
+
 def adjugate(matrix):
+    '''
+    Title:          adjugate()
+    Description:    Computes adj(A) = transpose of cofactor matrix
+    '''
     n = len(matrix)
     cofactor_matrix = np.zeros((n,n))
     for i in range(n):
