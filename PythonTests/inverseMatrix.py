@@ -5,7 +5,7 @@ import numpy as np
 # matrix = np.array(np.asmatrix('1 2 3 4 5; 6 7 8 9 10; 11 12 13 14 15; 16 17 18 19 20; 21 22 23 24 25')) # interesting pattern that when the matrix has a linear progression it has no inverse (det is always 0?)
 
 # Random matrix (change dimensions in size variable)
-matrix = np.random.randint(10, size=(4, 4))
+matrix = np.random.randint(10, size=(5, 5))
 print("Initial Matrix (A):")
 print(matrix)
 
@@ -35,8 +35,8 @@ def determinant(matrix):
     Description:    Recursively computes determinant using Laplace expansion
     '''
     n = len(matrix)
-    if n == 1:
-        return matrix[0][0]
+    # if n == 1: Not necessary
+    #     return matrix[0][0]
 
     if n == 2:
         return matrix[0][0]*matrix[1][1] - matrix[0][1]*matrix[1][0] # ad-bc
@@ -66,7 +66,7 @@ def adjugate(matrix):
     return cofactor_matrix.T # transpose of the cofactor matrix 
 
 inv = inverse(matrix)
-print("\nInverse of Matrix (A**-1)")
+print("\nInverse of Matrix (A^{-1})")
 print(inv)
 
 # Check correctness using A * A^{-1} = I
