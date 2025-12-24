@@ -19,12 +19,22 @@ void PrintMatrix(matrix2D<T> matrix){
 
 int main(){
 
+    // double xs[12] {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0};
+    // matrix2D<double> testMatrix(3, 4, xs);
+    // PrintMatrix(testMatrix);
 
-    double xs[12] {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0};
+    // Test inversion
 
-    matrix2D<double> testMatrix(3, 4, xs);
-
-    PrintMatrix(testMatrix);
+    cout << "Test Matrix Inversion:" << endl;
+    
+    double invertTestData[9] = {2.0, 1.0, 1.0, 1.0, 0.0, 1.0, 0.0, 3.0, 1.0};
+    matrix2D<double> invertTest(3, 3, invertTestData);
+    matrix2D<double> invertResult = invertTest;
+    invertResult.inverse();
+    cout<< "From:" << endl;
+    PrintMatrix(invertTest);
+    cout << "To:" << endl;
+    PrintMatrix(invertResult);
 
     return 0;
 }
